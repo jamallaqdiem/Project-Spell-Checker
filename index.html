@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project-Spell-Checker</title>
-    <script type="module" source ="script.mjs"></script>
-</head>
-<body>
-    
-</body>
+    <style>
+        textarea { display: block; margin: 10px 0; width: 100%; max-width: 600px; }
+        button { background-color: green; color: white;}
+    </style>
+    <script type="module" src="script.mjs"></script>
+  </head>
+  <body>
+    <div>
+      <label for="user-text">Check your spelling: </label><br>
+      <textarea id="user-text" name="checkBox" rows="20" cols="50" placeholder="Start typing...."></textarea>
+    </div>
+    <button id = 'button'> Check Spelling</button>
+
+    <div id = 'check-results'></div>
+  </body>
 </html>
