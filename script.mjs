@@ -49,4 +49,7 @@ window.onload = () => {
     }
     
   });
+  textArea.addEventListener('input',() => {
+    resultCLick.innerHTML = ''
+  })
 }
