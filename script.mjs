@@ -13,7 +13,7 @@ window.onload = () => {
 
     if (wordsToCheck.length === 0) {
         resultCLick.innerText = 'Please enter some texts to check';
-        resultCLick.style.color ='red'
+        resultCLick.className='error-title'
         setTimeout (()=> {
             resultCLick.innerText = ''
         },3000)
@@ -22,20 +22,21 @@ window.onload = () => {
         const mistakesFound = wordsToCheck.filter(word => !isCorrectWord(word))
         if(mistakesFound.length===0)  {
             resultCLick.innerText = 'All Words Are Correct.'
-            resultCLick.style.color ='green'
+            resultCLick.className='success-msg'
              setTimeout (()=> {
             resultCLick.innerText = ''
         }, 3000)
         } else {
             const title = document.createElement('p')
             title.innerText = `Found ${mistakesFound.length} mistakes: ${mistakesFound.join(', ')}`
-            title.style.color='red'
+            title.className='error-title ' 
             resultCLick.append(title)
 
             mistakesFound.forEach(word => {
                 const buttonContainer = document.createElement('div')
                 const btn = document.createElement('button')
                 btn.innerText=`Add ${word} to dictionary`
+                btn.className= 'add-word-btn'
 
                 btn.addEventListener('click',()=> {
                    addingWords(word)
